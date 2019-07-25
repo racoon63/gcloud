@@ -2,7 +2,7 @@
 
 ## Contents
 
-* [IAM](IAM)
+* [IAM](#iam)
 
 ## IAM
 
