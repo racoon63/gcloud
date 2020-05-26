@@ -1,4 +1,4 @@
-# GCLOUD CHEATSHEET
+# gcloud cheatsheet
 
 ## Contents
 
