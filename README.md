@@ -26,6 +26,9 @@ gcloud projects get-iam-policy [PROJECT_ID]
 
 # Grant user or service account a role on a project 
 gcloud projects add-iam-policy-binding [PROJECT_ID] --member serviceAccount:[SA_NAME]@[PROJECT_ID].iam.gserviceaccount.com --role roles/[ROLE]
+
+# Login as a service account with a credentials.json file
+gcloud auth activate-service-account [ACCOUNT] --key-file=KEY_FILE
 ```
 
 ## Storage
