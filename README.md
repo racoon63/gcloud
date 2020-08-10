@@ -53,3 +53,15 @@ gsutil versioning set on gs://[BUCKET_NAME]
 # Enable service API
 gcloud services enable [API_NAME] --project [YOUR_PROJECT_ID]
 ```
+
+## Container / GKE
+
+```bash
+# Create a basic and cost effective GKE cluster for testing and dev 
+gcloud container clusters create [CLUSTER_NAME] --project [YOUR_PROJECT_ID] --zone europe-west4-a --preemptible --num-nodes 1 --machine-type g1-small
+```
+
+```bash
+# Enable autoscaling for GKE cluster and specify maximum number od nodes for the cluster 
+gcloud container clusters update demo --enable-autoscaling --max-nodes 2
+```
