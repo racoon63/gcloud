@@ -36,7 +36,7 @@ gcloud projects add-iam-policy-binding example-project-id-1 \
     --role='roles/compute.instanceAdmin.v1' \
     --condition=”expression=request.time < \
                  timestamp("2020-12-31T00:00:00Z"),\
-                 title=expires_end_of_2012,\
+                 title=expires_end_of_2020,\
                  description=Expires at midnight on 2020-12-31”
 ```
 
