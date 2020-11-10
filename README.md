@@ -29,6 +29,15 @@ gcloud projects add-iam-policy-binding [PROJECT_ID] --member serviceAccount:[SA_
 
 # Login as a service account with a credentials.json file
 gcloud auth activate-service-account [ACCOUNT] --key-file=KEY_FILE
+
+# Grant permission to a user account until a specific time
+gcloud projects add-iam-policy-binding example-project-id-1 \
+    --member='user:myuser@mydomain.com' \
+    --role='roles/compute.instanceAdmin.v1' \
+    --condition=”expression=request.time < \
+                 timestamp("2020-12-31T00:00:00Z"),\
+                 title=expires_end_of_2012,\
+                 description=Expires at midnight on 2020-12-31”
 ```
 
 ## Storage
@@ -37,7 +46,7 @@ gcloud auth activate-service-account [ACCOUNT] --key-file=KEY_FILE
 # Create a new bucket in a project
 gsutil mb -p [PROJECT_NAME] -c [STORAGE_CLASS] -l [BUCKET_LOCATION] -b on gs://[BUCKET_NAME]/
 
-# Delete a bucket
+# Delete a bucket and all of its objects
 gsutil rm -r gs://[BUCKET_NAME]
 
 # Delete bucket only if it is empty
